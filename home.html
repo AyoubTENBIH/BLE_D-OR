@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLE D'OR Boulangerie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="mouse-circle"></div>
+    <!-- En-tête -->
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="images/logo-removebg-preview.png" alt="Logo de la boulangerie">
+        </div>
+
+        <!-- Navigation -->
+        <nav id="navLinks">
+            <a href="#Acueil" onclick="activeNave(this)" class="active">
+                Accueil <span class="icon">🏠</span>
+            </a>
+            <a href="#Produits" onclick="activeNave(this)">
+                Produits <span class="icon">🛒</span>
+            </a>
+            <a href="#temoignage" onclick="activeNave(this)">
+                Témoignages <span class="icon">💬</span>
+            </a>
+            <a href="#contact" onclick="activeNave(this)">
+                Contact <span class="icon">📞</span>
+            </a>
+        </nav>
+
+        <!-- Section droite (icône panier et menu) -->
+        <div class="last">
+            <div class="pagne">
+                <a href="cart.html">
+                    <img src="images/grocery.gif" alt="Icône panier">
+                </a>
+            </div>
+            <div class="menu">
+                <img src="images/settings (1).png" alt="Icône menu" onclick="toggleMenu()">
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Accueil -->
+    <section class="Acueil" id="Acueil">
+        <!-- Contenu texte -->
+        <div class="text-content">
+            <div class="title-home">
+                <div class="typing-container">
+                    <span id="typing-text"></span>
+                </div>
+                <h5>- L'art du pain et de la pâtisserie -</h5>
+            </div>
+            <div class="main-text">
+                <p>
+                    Chaque jour, nous préparons avec passion des pains croustillants, des viennoiseries dorées et des
+                    pâtisseries gourmandes pour ravir vos papilles.
+                </p>
+            </div>
+            <div class="button-cta">
+                <a href="#">
+                    <button class="bn632-hover bn25">
+                        <img src="images/rolling-pin.gif" alt="Icône bouton" class="button-icon">
+                        Acheter
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Contenu image -->
+        <div class="image-container">
+            <img id="main-image" src="images/3.png" alt="Image Principale">
+            <div class="small-images">
+                <img class="small-image" src="images/1.png" alt="Image 1">
+                <img class="small-image" src="images/2.png" alt="Image 2">
+                <img class="small-image" src="images/4.png" alt="Image 3">
+                <img class="small-image" src="images/5.png" alt="Image 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Slider -->
+    <div class="slider-container">
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide" data-color="#4E342E">
+                        <div class="image-wrapper">
+                            <img src="images/1.png" alt="Image 1" class="slider-image">
+                        </div>
+                    </li>
+                    <li class="glide__slide" data-color="#E07A5F">
+                        <div class="image-wrapper">
+                            <img src="images/2.png" alt="Image 2" class="slider-image">
+                        </div>
+                    </li>
+                    <li class="glide__slide" data-color="#F5E1C8">
+                        <div class="image-wrapper">
+                            <img src="images/3.png" alt="Image 3" class="slider-image">
+                        </div>
+                    </li>
+                    <li class="glide__slide" data-color="#D4A373">
+                        <div class="image-wrapper">
+                            <img src="images/4.png" alt="Image 4" class="slider-image">
+                        </div>
+                    </li>
+                    <li class="glide__slide" data-color="#FFF8E1">
+                        <div class="image-wrapper">
+                            <img src="images/5.png" alt="Image 4" class="slider-image">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Contrôles de pagination -->
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+                <button class="glide__bullet" data-glide-dir="=0"></button>
+                <button class="glide__bullet" data-glide-dir="=1"></button>
+                <button class="glide__bullet" data-glide-dir="=2"></button>
+                <button class="glide__bullet" data-glide-dir="=3"></button>
+                <button class="glide__bullet" data-glide-dir="4"></button>
+            </div>
+        </div>
+    </div>
+    <section id="Produits">
+        <div class="btn_filter_container">
+            <div class="filter-buttons">
+                <button onclick="filterProducts('patisserie')">Pâtisserie</button>
+                <button onclick="filterProducts('viennoiseries')">Viennoiseries</button>
+                <button onclick="filterProducts('pain')">Pain</button>
+            </div>
+        </div>
+
+
+        <div class="products" id="product-container"></div>
+    </section>
+    <section class="reviews" id="temoignage">
+        <h2>Our Clients Reviews</h2>
+        <div class="review-wrapper">
+            <div class="review-container">
+                <div class="scrolling">
+                    <!-- Première ligne de cartes -->
+                    <div class="review">
+                        <div class="info-per">
+                            <img src="images/pic-2.png" alt="Profile">
+                            <h3>Sara</h3>
+                            <p>@sara123</p>
+                        </div>
+                        <p>Service moyen, reste des points à améliorer.</p>
+                        <div class="stars">★★★☆☆</div>
+                    </div>
+                    <div class="review">
+                        <div class="info-per">
+                            <img src="images/pic-1.png" alt="Profile">
+                            <h3>John</h3>
+                            <p>@john456</p>
+                        </div>
+                        <p>Très satisfait, excellent service !</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <div class="review">
+                        <div class="info-per">
+                            <img src="images/pic-4.png" alt="Profile">
+                            <h3>mariam</h3>
+                            <p>@mariam-shop</p>
+                        </div>
+                        <p>Service moyen, reste des points à améliorer.</p>
+                        <div class="stars">★★★☆☆</div>
+                    </div>
+                    <div class="review">
+                        <div class="info-per">
+                            <img src="images/pic-3.png" alt="Profile">
+                            <h3>John</h3>
+                            <p>@john456</p>
+                        </div>
+                        <p>Très satisfait, excellent service !</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <!-- Deuxième ligne de cartes -->
+                    <div class="review">
+                        <div class="info-per">
+                            <img src="images/pic-6.png" alt="Profile">
+                            <h3>hanan</h3>
+                            <p>@hanan-karolin</p>
+                        </div>
+                        <p>Service moyen, reste des points à améliorer.</p>
+                        <div class="stars">★★★☆☆</div>
+                    </div>
+                    <div class="review">
+                        <div class="info-per">
+                            <img src="images/pic-5.png" alt="Profile">
+                            <h3>omar</h3>
+                            <p>@omar</p>
+                        </div>
+                        <p>Très satisfait, excellent service !</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <div class="review">
+                        <div class="info-per">
+                            <img src="images/pic-4.png" alt="Profile">
+                            <h3>Sara</h3>
+                            <p>@sara123</p>
+                        </div>
+                        <p>Service moyen, reste des points à améliorer.</p>
+                        <div class="stars">★★★☆☆</div>
+                    </div>
+                    <div class="review">
+                        <div class="info-per">
+                            <img src="images/pic-1.png" alt="Profile">
+                            <h3>ayoub</h3>
+                            <p>@ayoub</p>
+                        </div>
+                        <p>Très satisfait, excellent service !</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <div class="review">
+                        <div class="info-per">
+                            <img src="images/pic-6.png" alt="Profile">
+                            <h3>hanan</h3>
+                            <p>@hanan-karolin</p>
+                        </div>
+                        <p>Service moyen, reste des points à améliorer.</p>
+                        <div class="stars">★★★☆☆</div>
+                    </div>
+                    <div class="review">
+                        <div class="info-per">
+                            <img src="images/pic-5.png" alt="Profile">
+                            <h3>omar</h3>
+                            <p>@omar</p>
+                        </div>
+                        <p>Très satisfait, excellent service !</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <div class="review">
+                        <div class="info-per">
+                            <img src="images/pic-4.png" alt="Profile">
+                            <h3>Sara</h3>
+                            <p>@sara123</p>
+                        </div>
+                        <p>Service moyen, reste des points à améliorer.</p>
+                        <div class="stars">★★★☆☆</div>
+                    </div>
+                    <div class="review">
+                        <div class="info-per">
+                            <img src="images/pic-1.png" alt="Profile">
+                            <h3>ayoub</h3>
+                            <p>@ayoub</p>
+                        </div>
+                        <p>Très satisfait, excellent service !</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="form-container">
+            <!-- Illustration (figure) -->
+            <figure aria-hidden="true">
+                <div class="person-body"></div>
+                <div class="neck skin"></div>
+                <div class="head skin">
+                    <div class="eyes"></div>
+                    <div class="mouth"></div>
+                </div>
+                <div class="hair"></div>
+                <div class="ears"></div>
+                <div class="shirt-1"></div>
+                <div class="shirt-2"></div>
+            </figure>
+            <form id="contactForm" class="modern-form">
+                <!-- Champ Email -->
+                <div class="form-group">
+                    <input id="item1" class="form-input" placeholder="Email" onkeyup="storage()" required type="email">
+                    <span class="input-border"></span>
+                </div>
+
+                <!-- Champ Mot de passe -->
+                <div class="form-group">
+                    <input id="item2" class="form-input" placeholder="Mot de passe" onkeyup="storage()" required
+                        type="password">
+                    <span class="input-border"></span>
+                </div>
+
+                <!--champ description-->
+                <div class="form-group">
+                    <textarea name="description" id="item3" placeholder="entrer vous message ici !"></textarea>
+                </div>
+                <div class="checkbox-group">
+                    <button type="button" class="toggle-password" id="toggle-password" onclick="yeuxchange()">
+                        afficher le password 👁
+                    </button>
+                </div>
+
+
+
+                <!-- Bouton de soumission -->
+                 <div class="btn-container">
+                    <button>
+                    <div class="svg-wrapper-1">
+                      <div class="svg-wrapper">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          height="24"
+                        >
+                          <path fill="none" d="M0 0h24v24H0z"></path>
+                          <path
+                            fill="currentColor"
+                            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <span>Send</span>
+                  </button>
+                 </div>
+                
+            </form>
+        </div>
+        <div class="allpage">
+            <div class="all">
+                <div class="mit">
+                    <section class="faq-section">
+                        <div class="questions">
+                            <!-- FAQ Item 1 -->
+                            <div class="faq-item">
+                                <h3 onclick="toggleAnswer(this)">À quelle heure ouvrez-vous et fermez-vous ?</h3>
+                                <p class="answer">Nous ouvrons à 7h et fermons à 18h.</p>
+                            </div>
+
+                            <!-- FAQ Item 2 -->
+                            <div class="faq-item">
+                                <h3 onclick="toggleAnswer(this)">Proposez-vous un service de livraison ?</h3>
+                                <p class="answer">Oui, nous livrons en ville pour les commandes de plus de 20$.</p>
+                            </div>
+
+                            <!-- FAQ Item 3 -->
+                            <div class="faq-item">
+                                <h3 onclick="toggleAnswer(this)">Offrez-vous des réductions pour les grosses commandes ?
+                                </h3>
+                                <p class="answer">Oui ! Nous proposons des réductions pour les commandes en gros pour
+                                    les fêtes, événements ou traiteurs.</p>
+                            </div>
+
+                            <!-- FAQ Item 4 -->
+                            <div class="faq-item">
+                                <h3 onclick="toggleAnswer(this)">Quel est le prix d’une douzaine de croissants ?</h3>
+                                <p class="answer">Une douzaine de croissants coûte 18$, mais nous avons aussi une offre
+                                    où vous en achetez 10 et en obtenez 2 gratuits.</p>
+                            </div>
+
+                            <!-- FAQ Item 5 -->
+                            <div class="faq-item">
+                                <h3 onclick="toggleAnswer(this)">Proposez-vous des messages personnalisés sur les
+                                    gâteaux ?</h3>
+                                <p class="answer">Oui, nous pouvons écrire le message de votre choix sur votre gâteau
+                                    avec du glaçage !</p>
+                            </div>
+
+                            <!-- FAQ Item 6 -->
+                            <div class="faq-item">
+                                <h3 onclick="toggleAnswer(this)">Quels moyens de paiement acceptez-vous ?</h3>
+                                <p class="answer">Nous acceptons les paiements en espèces, cartes de crédit/débit et
+                                    paiements numériques comme Apple Pay et Google Pay.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>Entreprise</h4>
+                    <ul>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Nos services</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Programme d'affiliation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Aide</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Livraison</a></li>
+                        <li><a href="#">Retours</a></li>
+                        <li><a href="#">Suivi de commande</a></li>
+                        <li><a href="#">Modes de paiement</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Boutique en ligne</h4>
+                    <ul>
+                        <li><a href="#">Avis client</a></li>
+                        <li><a href="#">Offres spéciales</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#"><img src="images/youtube_icon-icons.com_59209.png" alt=""></a>
+                        <a href="#"><img src="images/facebook_icon-icons.com_59205.png" alt=""></a>
+                        <a href="#"><img src="images/instagram_icon-icons.com_59207 (1).png" alt=""></a>
+                        <a href="#"><img src="images/twitter_2_icon-icons.com_59206.png" alt=""></a>
+                    </div>
+                    <div class="logo-col">
+                        <h1>
+                            <span>B</span><span>L</span><span>E</span> <span>D</span><span>'</span><span>O</span><span>R</span>
+                        </h1>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+    <script src="script.js"></script>
+    <button onclick="tohaut()" id="scroll-to-top" title="Retour en haut">↑</button>
+</body>
+
+</html>

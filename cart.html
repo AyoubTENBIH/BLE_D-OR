@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - BLE D'OR</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- En-tête (copié depuis home.html) -->
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="home.html">
+                <img src="images/logo-removebg-preview.png" alt="Logo de la boulangerie">
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav id="navLinks">
+            <a href="home.html#Acueil" onclick="activeNave(this)">
+                Accueil <span class="icon">🏠</span>
+            </a>
+            <a href="home.html#Produits" onclick="activeNave(this)">
+                Produits <span class="icon">🛒</span>
+            </a>
+            <a href="home.html#temoignage" onclick="activeNave(this)">
+                Témoignages <span class="icon">💬</span>
+            </a>
+            <a href="home.html#contact" onclick="activeNave(this)">
+                Contact <span class="icon">📞</span>
+            </a>
+        </nav>
+
+        <!-- Section droite (icône panier et menu) -->
+        <div class="last">
+            <div class="pagne">
+                <a href="cart.html">
+                    <img src="images/grocery.gif" alt="Icône panier">
+                </a>
+            </div>
+            <div class="menu">
+                <img src="images/settings (1).png" alt="Icône menu" onclick="toggleMenu()">
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+        <section id="cart-section" style="position: relative; width: 100%; height: 100vh;">
+            <h1>Votre Panier</h1>
+            <div id="cart-content"></div>
+            <button id="checkout-btn" class="checkout-btn">Passer la commande</button>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer style="position: absolute; bottom: 0; left: 0; right: 0;">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>Entreprise</h4>
+                    <ul>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Nos services</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Programme d'affiliation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Aide</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Livraison</a></li>
+                        <li><a href="#">Retours</a></li>
+                        <li><a href="#">Suivi de commande</a></li>
+                        <li><a href="#">Modes de paiement</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Boutique en ligne</h4>
+                    <ul>
+                        <li><a href="#">Avis client</a></li>
+                        <li><a href="#">Offres spéciales</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#"><img src="images/youtube_icon-icons.com_59209.png" alt=""></a>
+                        <a href="#"><img src="images/facebook_icon-icons.com_59205.png" alt=""></a>
+                        <a href="#"><img src="images/instagram_icon-icons.com_59207 (1).png" alt=""></a>
+                        <a href="#"><img src="images/twitter_2_icon-icons.com_59206.png" alt=""></a>
+                    </div>
+                    <div class="logo-col">
+                        <h1>
+                            <span>B</span><span>L</span><span>E</span> <span>D</span><span>'</span><span>O</span><span>R</span>
+                        </h1>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="cart.js"></script>
+</body>
+
+</html>
